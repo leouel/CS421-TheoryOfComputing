@@ -9,10 +9,13 @@ using namespace std;
 // File scanner.cpp written by: Group Number: 23 
 //=====================================================
 
+//Done by: Leouel Guanzon and John Foster
+//Tables are moved here so functions can access them.
 enum tokentype {ERROR, WORD1, WORD2, PERIOD, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
 
 string tokenName[16] = {"ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
 
+//Array is used for simplicity
 string reservedWords[38] = {"masu", "VERB", "masen", "VERBNEG", "mashita", "VERBPAST", 
 "masendeshita", "VERBPASTNEG", "desu", "IS", "deshita", "WAS", 
 "o", "OBJECT", "wa", "SUBJECT", "ni", "DESTINATION", 
@@ -50,11 +53,6 @@ bool isConsonant2(char c){
 //Done by: Leouel Guanzon and Marco Flores
 bool word (string s)
 {
-  if(s == "eofm") //handles eofm since word(string s) would return false right away in scanner() if eofm is not handled.
-  {				  //This will result to tokentype = ERROR if eofm is not handled properly.
-	  return EOFM;
-  }
-
   int state = 0;
   int charpos = 0;
 
@@ -176,6 +174,7 @@ bool period (string s)
 // ------ Three  Tables -------------------------------------
 
 // TABLES Done by: Leouel Guanzon and John Foster
+// Moved to the top to be use for global scope
 
 /*
 // ** Update the tokentype to be WORD1, WORD2, PERIOD, ERROR, EOFM, etc.
@@ -211,6 +210,11 @@ int scanner(tokentype& tt, string& w)
   // 1. If it is eofm, return right now.
   fin >> w;
 
+  if(w == "eofm")
+  {
+	return EOFM;
+  }
+
   /*  **
   2. Call the token functions (word and period) 
      one after another (if-then-else).
@@ -226,6 +230,17 @@ int scanner(tokentype& tt, string& w)
 		tt = WORD1;
 	}
 
+  /*
+  3. If it was a word,
+     check against the reservedwords list.
+     If not reserved, tokentype is WORD1 or WORD2
+     decided based on the last character.
+  */
+
+
+  /*
+  4. Return the token type & string  (pass by reference)
+  */
 	for(int i = 0; i < 38; i++)
 	{
 		if(reservedWords[i] == w)
@@ -256,17 +271,6 @@ int scanner(tokentype& tt, string& w)
   }
 
   return 1;
-
-  /*
-  3. If it was a word,
-     check against the reservedwords list.
-     If not reserved, tokentype is WORD1 or WORD2
-     decided based on the last character.
-  */
-
-  /*
-  4. Return the token type & string  (pass by reference)
-  */
 
 }//the end of scanner
 
