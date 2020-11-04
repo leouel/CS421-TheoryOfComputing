@@ -1,6 +1,8 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include"sanner.cpp"
+
 using namespace std;
 
 /* INSTRUCTION:  Complete all ** parts.

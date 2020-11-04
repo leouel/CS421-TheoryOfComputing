@@ -280,6 +280,7 @@ int scanner(tokentype& tt, string& w)
 // This will go away after this assignment
 // DO NOT CHANGE THIS!!!!!! 
 // Done by:  Louis
+/*
 int main()
 {
   tokentype thetype;
@@ -308,3 +309,4 @@ int main()
    fin.close();
 
 }// end
+*/
