@@ -25,21 +25,34 @@ using namespace std;
 
 // Type of error: **
 // Done by: ** 
-void syntaxerror1(  ){    }
+void syntaxerror1()
+{
+
+}
+
 // Type of error: **
 // Done by: ** 
-void syntaxerror2(  ) {    }
+void syntaxerror2() 
+{
+
+}
 
 // ** Need the updated match and next_token with 2 global vars
 // saved_token and saved_lexeme
 
 // Purpose: **
 // Done by: **
-token_type next_token(){}
+token_type next_token()
+{
+
+}
 
 // Purpose: **
 // Done by: **
-boolean match(tokentype expected) {}
+boolean match(tokentype expected)
+{
+
+}
 
 // ----- RDP functions - one per non-term -------------------
 
