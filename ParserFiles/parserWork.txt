@@ -1,23 +1,31 @@
 
 Fill this out and submitIt_LK this file with the executable.
 
-Group#:
+Group#: 23
 
 Must have divided the work as specified.
 If the member did not fully contribute to the assigned part, do not list his/her name!
 
 1.State who did what by indicating: 
-  Member A tasks (syntax error functions) - who:
-  Member B tasks (match and next_token)- who:
-  Member C tasks (main()) who:
+  Member A tasks (syntax error functions) - who: Leouel Guanzon and ...
+  Member B tasks (match and next_token)- who: Leouel Guanzon and ...
+  Member C tasks (main()) who: Leouel Guanzon and ...
   Who wrote which parser functions? 
   functions             who
   ----------------      ----------
+  s()					Leouel Guanzon
+  after_subject()		Leouel Guanzon
+  after_noun()			Leouel Guanzon
+  after_object()		Leouel Guanzon
+  verb()				Leouel Guanzon
+  be()					Leouel Guanzon
+  tense()				Leouel Guanzon
 
 2.  Who came to the meeting to test the program together?
+	Everyone came to the meeting to test the program.
 
 3.  You have included all the required comments? 
-    (Grammer: and Done by: )
+    (Grammer: and Done by: ) Yes
 
 4.  The parser produced correct output for 
     all 6 test cases?
