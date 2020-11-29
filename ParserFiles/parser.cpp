@@ -43,7 +43,7 @@ void syntaxerror1(tokentype tt, string saved_lexeme)
 // Done by: Leouel Guanzon 
 void syntaxerror2(string pFunction, string saved_lexeme) 
 {
-	cout << "ERROR: unexpected " << saved_lexeme << " found in " << pFunction << endl;
+	cout << "\nSYNTAX ERROR: unexpected " << saved_lexeme << " found in " << pFunction << endl;
 	exit(EXIT_FAILURE);
 }
 
@@ -60,7 +60,8 @@ tokentype next_token()
 		cout << "Scanner called using word: " << saved_lexeme << endl;
 		if(saved_lexeme == "eofm")
 		{
-			cout << "SUCCESSFULLY PARSED STORY!" << endl;
+			cout << endl;
+			cout << "Successfully parsed <story>." << endl;
 			fout.close();
 			exit(EXIT_SUCCESS);
 		}
@@ -291,6 +292,8 @@ int main()
   {
 	  s();
   }
+
+  fin.close();
 
   //** calls the <story> to start parsing
   //** closes the input file 
