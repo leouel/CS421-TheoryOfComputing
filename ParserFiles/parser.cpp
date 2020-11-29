@@ -170,16 +170,16 @@ void noun()
 // Done by: Leouel Guanzon
 void after_object()
 {
-	cout << "Processing <after_object>" << endl;
+	cout << "Processing <afterObject>" << endl;
 	switch(next_token())
 	{
 		case WORD2:
-			match(WORD2);
+			verb();
 			tense();
 			match(PERIOD);
 			break;
 		case WORD1:
-			match(WORD1);
+			noun();
 			match(DESTINATION);
 			verb();
 			tense();
@@ -193,7 +193,7 @@ void after_object()
 			match(PERIOD);
 			break;
 		default:
-			syntaxerror2("after_object", saved_lexeme);
+			syntaxerror2("afterObject", saved_lexeme);
 			break;
 	}
 }
@@ -202,16 +202,14 @@ void after_object()
 // Done by: Leouel Guanzon
 void after_noun()
 {
-	cout << "Processing <after_noun>" << endl;
+	cout << "Processing <afterNoun>" << endl;
 	switch(next_token())
 	{
 		case IS:
-			//match(IS);
 			be();
 			match(PERIOD);
 			break;
 		case WAS:
-			//match(WAS);
 			be();
 			match(PERIOD);
 			break;
@@ -226,7 +224,7 @@ void after_noun()
 			after_object();
 			break;
 		default:
-			syntaxerror2("after_noun", saved_lexeme);
+			syntaxerror2("afterNoun", saved_lexeme);
 			break;
 	}
 }
@@ -235,24 +233,24 @@ void after_noun()
 // Done by: Leouel Guanzon
 void after_subject()
 {
-	cout << "Processing <after_subject>" << endl;
+	cout << "Processing <afterSubject>" << endl;
 	switch(next_token())
 	{
 		case WORD2:
-			match(WORD2);
+			verb();
 			tense();
 			match(PERIOD);
 			break;
 		case WORD1:
-			match(WORD1);
+			noun();
 			after_noun();
 			break;
 		case PRONOUN:
-			match(PRONOUN);
+			noun();
 			after_noun();
 			break;
 		default:
-			syntaxerror2("after)subject", saved_lexeme);
+			syntaxerror2("afterSubject", saved_lexeme);
 			break;
 	}
 }
