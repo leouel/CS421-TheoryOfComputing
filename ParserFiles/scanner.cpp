@@ -267,7 +267,7 @@ int scanner(tokentype& tt, string& w)
 
   if(tt == ERROR)
   {
-	  cout << "\nLexical error: " << w << " is not a valid token." << endl;
+	  cout << "Lexical error: " << w << " is not a valid token." << endl;
   }
 
   return 1;
