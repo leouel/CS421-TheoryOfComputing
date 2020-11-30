@@ -7,9 +7,9 @@ Must have divided the work as specified.
 If the member did not fully contribute to the assigned part, do not list his/her name!
 
 1.State who did what by indicating: 
-  Member A tasks (syntax error functions) - who: Leouel Guanzon and ...
-  Member B tasks (match and next_token)- who: Leouel Guanzon and ...
-  Member C tasks (main()) who: Leouel Guanzon and ...
+  Member A tasks (syntax error functions) - who: Leouel Guanzon
+  Member B tasks (match and next_token)- who: Leouel Guanzon
+  Member C tasks (main()) who: Leouel Guanzon
   Who wrote which parser functions? 
   functions             who
   ----------------      ----------
@@ -28,7 +28,7 @@ If the member did not fully contribute to the assigned part, do not list his/her
     (Grammer: and Done by: ) Yes
 
 4.  The parser produced correct output for 
-    all 6 test cases?
+    all 6 test cases? Yes
 
 5.  What extra credit feature did you include?
     If it is error correction, did you make sure errors.txt

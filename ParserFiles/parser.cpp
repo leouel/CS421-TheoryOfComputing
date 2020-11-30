@@ -35,7 +35,7 @@ string token_Name[16] = {"ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG",
 // Done by: Leouel Guanzon 
 void syntaxerror1(tokentype tt, string saved_lexeme)
 {
-	cout << "SYNTAX ERROR: expected " << token_Name[tt] << " but found " << saved_lexeme << endl;
+	cout << "\nSYNTAX ERROR: expected " << token_Name[tt] << " but found " << saved_lexeme << endl;
 	exit(EXIT_FAILURE);
 }
 
