@@ -22,7 +22,7 @@ If the member did not fully contribute to the assigned part, do not list his/her
   tense()				Leouel Guanzon
 
 2.  Who came to the meeting to test the program together?
-	Everyone came to the meeting to test the program.
+	Leouel Guanzon tested the program for main project objective.
 
 3.  You have included all the required comments? 
     (Grammer: and Done by: ) Yes
@@ -34,6 +34,7 @@ If the member did not fully contribute to the assigned part, do not list his/her
     If it is error correction, did you make sure errors.txt
     got produced?
     [ You may still do EC later ]
+	No extra credit feature was added. Might add EC later.
         
 checkIt_LK in 24 hours and immediately correct and resubmit.     
 
