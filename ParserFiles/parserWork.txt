@@ -13,19 +13,19 @@ If the member did not fully contribute to the assigned part, do not list his/her
   Who wrote which parser functions? 
   functions             who
   ----------------      ----------
-  s()					Leouel Guanzon
-  after_subject()		Leouel Guanzon
-  after_noun()			Leouel Guanzon
-  after_object()		Leouel Guanzon
-  verb()				Leouel Guanzon
-  be()					Leouel Guanzon
-  tense()				Leouel Guanzon
+  s()					Leouel Guanzon, Marco Flores
+  after_subject()		Leouel Guanzon, Marco Flores
+  after_noun()			Leouel Guanzon, Marco Flores
+  after_object()		Leouel Guanzon, Marco Flores
+  verb()				Leouel Guanzon, Marco Flores
+  be()					Leouel Guanzon, Marco Flores
+  tense()				Leouel Guanzon, Marco Flores
 
 2.  Who came to the meeting to test the program together?
-	Leouel Guanzon tested the program for main project objective.
+	Leouel Guanzon and Marco Flores tested the program for main project objective.
 
 3.  You have included all the required comments? 
-    (Grammer: and Done by: ) Yes
+    (Grammer: and Done by: Marco Flores and Leouel Guanzon) Yes
 
 4.  The parser produced correct output for 
     all 6 test cases? Yes
@@ -34,7 +34,8 @@ If the member did not fully contribute to the assigned part, do not list his/her
     If it is error correction, did you make sure errors.txt
     got produced?
     [ You may still do EC later ]
-	No extra credit feature was added. Might add EC later.
+	We added in dissabling tracing messages with -dissable 
+    Scanner messages were left in as it was not specified to consider it a trace message
         
 checkIt_LK in 24 hours and immediately correct and resubmit.     
 

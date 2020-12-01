@@ -3,6 +3,7 @@
 #include<string>
 #include"scanner.cpp"
 #include<stdlib.h>
+#include <cstring>
 
 using namespace std;
 
@@ -28,6 +29,7 @@ ofstream fout;
 string saved_lexeme;
 tokentype saved_token;
 bool token_available = false;
+bool disable_tracing = false;
 string token_Name[16] = {"ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
 
 
@@ -57,7 +59,7 @@ tokentype next_token()
 	if(!token_available)
 	{
 		scanner(saved_token, saved_lexeme);
-		cout << "Scanner called using word: " << saved_lexeme << endl;
+		cout << "Scanner called using word: " << saved_lexeme << endl;//not sure if this is a tracing message
 		if(saved_lexeme == "eofm")
 		{
 			cout << endl;
@@ -83,7 +85,9 @@ bool match(tokentype expected)
 		syntaxerror1(expected, saved_lexeme);
 	}
 	else {
-		cout << "Matched " << token_Name[expected] << endl;
+		if (!disable_tracing){
+			cout << "Matched " << token_Name[expected] << endl;
+		}
 		token_available = false;
 		return true;
 	}
@@ -97,10 +101,12 @@ bool match(tokentype expected)
 // ** Be sure to put the name of the programmer above each function
 
 // Grammar: <tense> ::= VERBPAST | VERBPASTNEG | VERB | VERBNEG
-// Done by: Leouel Guanzon
+// Done by: Leouel Guanzon, Marco Flores
 void tense()
 {
-	cout << "Processing <tense>" << endl;
+	if (!disable_tracing){
+		cout << "Processing <tense>" << endl;
+	}
 	switch(next_token())
 	{
 		case VERBPAST:
@@ -122,10 +128,12 @@ void tense()
 }
 
 // Grammar: <be> ::= IS | WAS
-// Done by: Leouel Guanzon
+// Done by: Leouel Guanzon, Marco Flores
 void be()
 {
-	cout << "Processing <be>" << endl;
+	if (!disable_tracing){
+		cout << "Processing <be>" << endl;
+	}
 	switch(next_token())
 	{
 		case IS:
@@ -141,18 +149,22 @@ void be()
 }
 
 // Grammar: <verb> ::= WORD2
-// Done by: Leouel Guanzon
+// Done by: Leouel Guanzon, Marco Flores
 void verb()
 {
-	cout << "Processing <verb>" << endl;
+	if (!disable_tracing){
+		cout << "Processing <verb>" << endl;
+	}
 	match(WORD2);
 }
 
 // Grammar: <noun> ::= WORD1 | PRONOUN
-// Done by: Leouel Guanzon
+// Done by: Leouel Guanzon, Marco Flores
 void noun()
 {
-	cout << "Processing <noun>" << endl;
+	if (!disable_tracing){
+		cout << "Processing <noun>" << endl;
+	}
 	switch(next_token())
 	{
 		case WORD1:
@@ -168,10 +180,12 @@ void noun()
 }
 
 // Grammar: <after_object> ::= <verb> <tense> PERIOD | <noun> DESTINATION <verb> <tense> PERIOD
-// Done by: Leouel Guanzon
+// Done by: Leouel Guanzon, Marco Flores
 void after_object()
 {
-	cout << "Processing <afterObject>" << endl;
+	if (!disable_tracing){
+		cout << "Processing <afterObject>" << endl;
+	}
 	switch(next_token())
 	{
 		case WORD2:
@@ -200,10 +214,12 @@ void after_object()
 }
 
 // Grammar: <after_noun> ::= <be> PERIOD | DESTINATION <verb> <tense> PERIOD | OBJECT <after_object>
-// Done by: Leouel Guanzon
+// Done by: Leouel Guanzon, Marco Flores
 void after_noun()
 {
-	cout << "Processing <afterNoun>" << endl;
+	if (!disable_tracing){
+		cout << "Processing <afterNoun>" << endl;
+	}
 	switch(next_token())
 	{
 		case IS:
@@ -231,10 +247,12 @@ void after_noun()
 }
 
 // Grammar: <after_subject> ::= <verb> <tense> PERIOD | <noun> <aftern_noun>
-// Done by: Leouel Guanzon
+// Done by: Leouel Guanzon, Marco Flores
 void after_subject()
 {
-	cout << "Processing <afterSubject>" << endl;
+	if (!disable_tracing){
+		cout << "Processing <afterSubject>" << endl;
+	}
 	switch(next_token())
 	{
 		case WORD2:
@@ -257,10 +275,12 @@ void after_subject()
 }
 
 // Grammar: <s> ::= [CONNECTOR] <noun> SUBJECT <after_subject>
-// Done by: Leouel Guanzon
+// Done by: Leouel Guanzon, Marco Flores
 void s()
 {
-	cout << "Processing <s>" << endl;
+	if (!disable_tracing){
+		cout << "Processing <s>" << endl;
+	}
 	if(next_token() == CONNECTOR)
 	{
 		match(CONNECTOR);
@@ -276,14 +296,20 @@ string filename;
 //----------- Driver ---------------------------
 
 // The new test driver to start the parser
-// Done by:  Leouel Guanzon
-int main()
+// Done by:  Leouel Guanzon, Marco Flores
+int main(int argc, char* argv[])
 {
+	
   cout << "Enter the input file name: ";
   cin >> filename;
   fin.open(filename.c_str());
-
-  cout << "Processing <story>\n" << endl;
+  
+  if (argc==2 && strcmp(argv[1],"-dissable") == 0){
+	  disable_tracing = true;
+  }
+  if (!disable_tracing){
+	  cout << "Processing <story>\n" << endl;
+  }
   // Grammar: <story> ::= <s> { <s> }
   s();
   
