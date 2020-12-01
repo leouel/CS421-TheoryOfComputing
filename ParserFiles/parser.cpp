@@ -87,6 +87,7 @@ bool match(tokentype expected)
 		token_available = false;
 		return true;
 	}
+	return false;
 }
 
 // ----- RDP functions - one per non-term -------------------
@@ -283,7 +284,7 @@ int main()
   fin.open(filename.c_str());
 
   cout << "Processing <story>\n" << endl;
-  
+  // Grammar: <story> ::= <s> { <s> }
   s();
   
   while(next_token() != EOFM)
