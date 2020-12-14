@@ -296,6 +296,7 @@ string filename;
 //=================================================
 
 // ----- Four Utility Functions and Globals -----------------------------------
+string saved_E_word;
 
 // ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
 //    to display syntax error messages as specified by me.  
@@ -319,12 +320,23 @@ unordered_map<string, string> lexicon_map;
 //    getEword() - using the current saved_lexeme, look up the English word
 //                 in Lexicon if it is there -- save the result   
 //                 in saved_E_word
-//  Done by: ** 
+//  Done by: Marco Flores 
+
 //    gen(line_type) - using the line type,
 //                     sends a line of an IR to translated.txt
 //                     (saved_E_word or saved_token is used)
 //  Done by: ** 
+bool getEword(){
+  std::unordered_map<std::string,string>::const_iterator it = lexicon_map.find(saved_lexeme);
+  if ( it == lexicon_map.end()) 
+        return 0; //I think im suposed to do something on not found, nothing happens for now
+  saved_E_word = it->second;
+  return 1;
+}
 
+void gen(string line_type){
+  //use fout, the file is already open
+}
 // ----- Changes to the parser.cpp content ---------------------
 
 // ** Comment update: Be sure to put the corresponding grammar 
