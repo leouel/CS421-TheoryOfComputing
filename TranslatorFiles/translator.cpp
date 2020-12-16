@@ -22,6 +22,85 @@ bool disable_tracing = false;
 string token_Name[16] = {"ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
 
 
+string filename;
+
+/* INSTRUCTION:  Complete all ** parts.
+   You may use any method to connect this file to scanner.cpp
+   that you had written.  
+  e.g. You can copy scanner.cpp here by:
+          cp ../ScannerFiles/scanner.cpp .  
+       and then append the two files into one: 
+          cat scanner.cpp parser.cpp > myparser.cpp
+*/
+
+//=================================================
+// File parser.cpp written by Group Number: 23
+//=================================================
+
+// ----- Four Utility Functions and Globals -----------------------------------
+string saved_E_word;
+
+// ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
+//    to display syntax error messages as specified by me.  
+
+
+//=================================================
+// File translator.cpp written by Group Number: 23
+//=================================================
+
+// ----- Additions to the parser.cpp ---------------------
+
+// ** Declare Lexicon (i.e. dictionary) that will hold the content of lexicon.txt
+// Make sure it is easy and fast to look up the translation.
+// Do not change the format or content of lexicon.txt 
+//  Done by: Marco Flores
+//ifstream fin;
+//ofstream fout;
+unordered_map<string, string> lexicon_map;
+
+// ** Additions to parser.cpp here:
+//    getEword() - using the current saved_lexeme, look up the English word
+//                 in Lexicon if it is there -- save the result   
+//                 in saved_E_word
+//  Done by: Marco Flores 
+
+//    gen(line_type) - using the line type,
+//                     sends a line of an IR to translated.txt
+//                     (saved_E_word or saved_token is used)
+//  Done by: ** 
+bool getEword(){
+  std::unordered_map<std::string,string>::const_iterator it = lexicon_map.find(saved_lexeme);
+  if ( it == lexicon_map.end()) 
+        return 0; //I think im suposed to do something on not found, nothing happens for now
+  saved_E_word = it->second;
+  return 1;
+}
+
+
+//Done by: Leouel Guanzon
+void gen(string line_type){
+  //use fout, the file is already open
+	if(line_type == "TENSE")
+	{
+		cout << line_type << ": " << token_Name[saved_token] << endl;
+		fout << line_type << ": " << token_Name[saved_token] << endl;
+	}
+	else
+	{
+		cout << line_type << ": " << saved_E_word << endl;
+		fout << line_type << ": " << saved_E_word << endl;
+	}
+}
+// ----- Changes to the parser.cpp content ---------------------
+
+// ** Comment update: Be sure to put the corresponding grammar 
+//    rule with semantic routine calls
+//    above each non-terminal function 
+
+// ** Each non-terminal function should be calling
+//    getEword and/or gen now.
+
+
 // Type of error: Match() fails
 // Done by: Leouel Guanzon 
 void syntaxerror1(tokentype tt, string saved_lexeme)
@@ -179,21 +258,34 @@ void after_object()
 	{
 		case WORD2:
 			verb();
+			getEword();
+			gen("ACTION");
 			tense();
+			gen("TENSE");
 			match(PERIOD);
 			break;
 		case WORD1:
 			noun();
+			getEword();
 			match(DESTINATION);
+			gen("TO");
 			verb();
+			getEword();
+			gen("ACTION");
 			tense();
+			gen("TENSE");
 			match(PERIOD);
 			break;
 		case PRONOUN:
 			match(PRONOUN);
+			getEword();
 			match(DESTINATION);
+			gen("TO");
 			verb();
+			getEword();
+			gen("ACTION");
 			tense();
+			gen("TENSE");
 			match(PERIOD);
 			break;
 		default:
@@ -213,20 +305,29 @@ void after_noun()
 	{
 		case IS:
 			be();
+			gen("DESCRIPTION");
+			gen("TENSE");
 			match(PERIOD);
 			break;
 		case WAS:
 			be();
+			gen("DESCRIPTION");
+			gen("TENSE");
 			match(PERIOD);
 			break;
 		case DESTINATION:
 			match(DESTINATION);
+			gen("TO");
 			verb();
+			getEword();
+			gen("ACTION");
 			tense();
+			gen("TENSE");
 			match(PERIOD);
 			break;
 		case OBJECT:
 			match(OBJECT);
+			gen("OBJECT");
 			after_object();
 			break;
 		default:
@@ -246,15 +347,20 @@ void after_subject()
 	{
 		case WORD2:
 			verb();
+			getEword();
+			gen("ACTION");
 			tense();
+			gen("TENSE");
 			match(PERIOD);
 			break;
 		case WORD1:
 			noun();
+			getEword();
 			after_noun();
 			break;
 		case PRONOUN:
 			noun();
+			getEword();
 			after_noun();
 			break;
 		default:
@@ -273,78 +379,15 @@ void s()
 	if(next_token() == CONNECTOR)
 	{
 		match(CONNECTOR);
+		getEword();
+		gen("CONNECTOR");
 	}
 	noun();
+	getEword();
 	match(SUBJECT);
+	gen("ACTOR");
 	after_subject();
 }
-
-
-string filename;
-
-/* INSTRUCTION:  Complete all ** parts.
-   You may use any method to connect this file to scanner.cpp
-   that you had written.  
-  e.g. You can copy scanner.cpp here by:
-          cp ../ScannerFiles/scanner.cpp .  
-       and then append the two files into one: 
-          cat scanner.cpp parser.cpp > myparser.cpp
-*/
-
-//=================================================
-// File parser.cpp written by Group Number: 23
-//=================================================
-
-// ----- Four Utility Functions and Globals -----------------------------------
-string saved_E_word;
-
-// ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
-//    to display syntax error messages as specified by me.  
-
-
-//=================================================
-// File translator.cpp written by Group Number: 23
-//=================================================
-
-// ----- Additions to the parser.cpp ---------------------
-
-// ** Declare Lexicon (i.e. dictionary) that will hold the content of lexicon.txt
-// Make sure it is easy and fast to look up the translation.
-// Do not change the format or content of lexicon.txt 
-//  Done by: Marco Flores
-ifstream fin;
-ofstream fout;
-unordered_map<string, string> lexicon_map;
-
-// ** Additions to parser.cpp here:
-//    getEword() - using the current saved_lexeme, look up the English word
-//                 in Lexicon if it is there -- save the result   
-//                 in saved_E_word
-//  Done by: Marco Flores 
-
-//    gen(line_type) - using the line type,
-//                     sends a line of an IR to translated.txt
-//                     (saved_E_word or saved_token is used)
-//  Done by: ** 
-bool getEword(){
-  std::unordered_map<std::string,string>::const_iterator it = lexicon_map.find(saved_lexeme);
-  if ( it == lexicon_map.end()) 
-        return 0; //I think im suposed to do something on not found, nothing happens for now
-  saved_E_word = it->second;
-  return 1;
-}
-
-void gen(string line_type){
-  //use fout, the file is already open
-}
-// ----- Changes to the parser.cpp content ---------------------
-
-// ** Comment update: Be sure to put the corresponding grammar 
-//    rule with semantic routine calls
-//    above each non-terminal function 
-
-// ** Each non-terminal function should be calling
-//    getEword and/or gen now.
 
 
 // ---------------- Driver ---------------------------
