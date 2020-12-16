@@ -70,8 +70,12 @@ unordered_map<string, string> lexicon_map;
 //  Done by: ** 
 bool getEword(){
   std::unordered_map<std::string,string>::const_iterator it = lexicon_map.find(saved_lexeme);
-  if ( it == lexicon_map.end()) 
-        return 0; //I think im suposed to do something on not found, nothing happens for now
+  if ( it == lexicon_map.end()) {
+	  	//No translation exists, so we set the "english word" as just the original word in japanese
+		saved_E_word = saved_lexeme;
+		return 0;
+  }
+  //Found a translation, save it as the english word
   saved_E_word = it->second;
   return 1;
 }
