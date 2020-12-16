@@ -1,0 +1,131 @@
+(Note: We decided that the scanner listing each word didn't count as a parser trace message, and left it unaffected by the command line argument. Otherwise the console would look identical to the translated.txt file.)
+
+translator.exe -disable
+Enter the input file name: partCtest1
+Scanner called using word: watashi
+Scanner called using word: wa
+ACTOR: I/me
+Scanner called using word: rika
+Scanner called using word: desu
+DESCRIPTION: rika
+TENSE: IS
+Scanner called using word: .
+Scanner called using word: watashi
+Scanner called using word: wa
+ACTOR: I/me
+Scanner called using word: sensei
+Scanner called using word: desu
+DESCRIPTION: teacher
+TENSE: IS
+Scanner called using word: .
+Scanner called using word: rika
+Scanner called using word: wa
+ACTOR: rika
+Scanner called using word: gohan
+Scanner called using word: o
+OBJECT: meal
+Scanner called using word: tabE
+ACTION: eat
+Scanner called using word: masu
+TENSE: VERB
+Scanner called using word: .
+Scanner called using word: watashi
+Scanner called using word: wa
+ACTOR: I/me
+Scanner called using word: tesuto
+Scanner called using word: o
+OBJECT: test
+Scanner called using word: seito
+Scanner called using word: ni
+TO: student
+Scanner called using word: agE
+ACTION: give
+Scanner called using word: mashita
+TENSE: VERBPAST
+Scanner called using word: .
+Scanner called using word: shikashi
+CONNECTOR: However
+Scanner called using word: seito
+Scanner called using word: wa
+ACTOR: student
+Scanner called using word: yorokobI
+ACTION: enjoy
+Scanner called using word: masendeshita
+TENSE: VERBPASTNEG
+Scanner called using word: .
+Scanner called using word: dakara
+CONNECTOR: Therefore
+Scanner called using word: watashi
+Scanner called using word: wa
+ACTOR: I/me
+Scanner called using word: kanashii
+Scanner called using word: deshita
+DESCRIPTION: sad
+TENSE: WAS
+Scanner called using word: .
+Scanner called using word: soshite
+CONNECTOR: Then
+Scanner called using word: rika
+Scanner called using word: wa
+ACTOR: rika
+Scanner called using word: toire
+Scanner called using word: ni
+TO: restroom
+Scanner called using word: ikI
+ACTION: go
+Scanner called using word: mashita
+TENSE: VERBPAST
+Scanner called using word: .
+Scanner called using word: rika
+Scanner called using word: wa
+ACTOR: rika
+Scanner called using word: nakI
+ACTION: cry
+Scanner called using word: mashita
+TENSE: VERBPAST
+Scanner called using word: .
+Scanner called using word: eofm
+
+Successfully parsed <story>.
+
+
+---------------------------(Translated.txt)
+
+ACTOR: I/me
+DESCRIPTION: rika
+TENSE: IS
+
+ACTOR: I/me
+DESCRIPTION: teacher
+TENSE: IS
+
+ACTOR: rika
+OBJECT: meal
+ACTION: eat
+TENSE: VERB
+
+ACTOR: I/me
+OBJECT: test
+TO: student
+ACTION: give
+TENSE: VERBPAST
+
+CONNECTOR: However
+ACTOR: student
+ACTION: enjoy
+TENSE: VERBPASTNEG
+
+CONNECTOR: Therefore
+ACTOR: I/me
+DESCRIPTION: sad
+TENSE: WAS
+
+CONNECTOR: Then
+ACTOR: rika
+TO: restroom
+ACTION: go
+TENSE: VERBPAST
+
+ACTOR: rika
+ACTION: cry
+TENSE: VERBPAST
