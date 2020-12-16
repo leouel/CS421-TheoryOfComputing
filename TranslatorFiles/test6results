@@ -1,0 +1,13 @@
+Enter the input file name: partCtest6
+Processing <story>
+
+Processing <s>
+Lexical error: apple is not a valid token.
+Scanner called using word: apple
+Processing <noun>
+
+SYNTAX ERROR: unexpected apple found in noun
+
+--------------------Translated.txt
+
+(File empty)

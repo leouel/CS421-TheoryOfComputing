@@ -1,0 +1,19 @@
+Enter the input file name: partCtest3
+Processing <story>
+
+Processing <s>
+Scanner called using word: dakara
+Matched CONNECTOR
+CONNECTOR: Therefore
+Processing <noun>
+Scanner called using word: watashi
+Matched PRONOUN
+Scanner called using word: de
+
+SYNTAX ERROR: expected SUBJECT but found de
+
+
+
+----------------------Translated.txt
+
+CONNECTOR: Therefore

@@ -1,0 +1,23 @@
+Enter the input file name: partCtest4
+Processing <story>
+
+Processing <s>
+Scanner called using word: watashi
+Processing <noun>
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: I/me
+Processing <afterSubject>
+Scanner called using word: rika
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: mashita
+
+SYNTAX ERROR: unexpected mashita found in afterNoun
+
+
+----------------------Translated.txt
+
+ACTOR: I/me

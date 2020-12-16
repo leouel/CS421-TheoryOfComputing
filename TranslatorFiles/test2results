@@ -1,0 +1,31 @@
+Processing <s>
+Scanner called using word: soshite
+Matched CONNECTOR
+CONNECTOR: Then
+Processing <noun>
+Scanner called using word: watashi
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: I/me
+Processing <afterSubject>
+Scanner called using word: rika
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: desu
+Processing <be>
+Matched IS
+DESCRIPTION: rika
+TENSE: IS
+Scanner called using word: ne
+
+SYNTAX ERROR: expected PERIOD but found ne
+
+
+----------------------Translated.txt
+
+CONNECTOR: Then
+ACTOR: I/me
+DESCRIPTION: rika
+TENSE: IS

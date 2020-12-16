@@ -1,0 +1,13 @@
+Enter the input file name: partCtest5
+Processing <story>
+
+Processing <s>
+Scanner called using word: wa
+Processing <noun>
+
+SYNTAX ERROR: unexpected wa found in noun
+
+
+------------------------Translated.txt
+
+(File empty)

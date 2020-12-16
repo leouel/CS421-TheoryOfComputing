@@ -1,3 +1,199 @@
+
+Enter the input file name: partCtest1
+Processing <story>
+
+Processing <s>
+Scanner called using word: watashi
+Processing <noun>
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: I/me
+Processing <afterSubject>
+Scanner called using word: rika
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: desu
+Processing <be>
+Matched IS
+DESCRIPTION: rika
+TENSE: IS
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: watashi
+Processing <s>
+Processing <noun>
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: I/me
+Processing <afterSubject>
+Scanner called using word: sensei
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: desu
+Processing <be>
+Matched IS
+DESCRIPTION: teacher
+TENSE: IS
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: rika
+Processing <s>
+Processing <noun>
+Matched WORD1
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: rika
+Processing <afterSubject>
+Scanner called using word: gohan
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: o
+Matched OBJECT
+OBJECT: meal
+Processing <afterObject>
+Scanner called using word: tabE
+Processing <verb>
+Matched WORD2
+ACTION: eat
+Processing <tense>
+Scanner called using word: masu
+Matched VERB
+TENSE: VERB
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: watashi
+Processing <s>
+Processing <noun>
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: I/me
+Processing <afterSubject>
+Scanner called using word: tesuto
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: o
+Matched OBJECT
+OBJECT: test
+Processing <afterObject>
+Scanner called using word: seito
+Processing <noun>
+Matched WORD1
+Scanner called using word: ni
+Matched DESTINATION
+TO: student
+Processing <verb>
+Scanner called using word: agE
+Matched WORD2
+ACTION: give
+Processing <tense>
+Scanner called using word: mashita
+Matched VERBPAST
+TENSE: VERBPAST
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: shikashi
+Processing <s>
+Matched CONNECTOR
+CONNECTOR: However
+Processing <noun>
+Scanner called using word: seito
+Matched WORD1
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: student
+Processing <afterSubject>
+Scanner called using word: yorokobI
+Processing <verb>
+Matched WORD2
+ACTION: enjoy
+Processing <tense>
+Scanner called using word: masendeshita
+Matched VERBPASTNEG
+TENSE: VERBPASTNEG
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: dakara
+Processing <s>
+Matched CONNECTOR
+CONNECTOR: Therefore
+Processing <noun>
+Scanner called using word: watashi
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: I/me
+Processing <afterSubject>
+Scanner called using word: kanashii
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: deshita
+Processing <be>
+Matched WAS
+DESCRIPTION: sad
+TENSE: WAS
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: soshite
+Processing <s>
+Matched CONNECTOR
+CONNECTOR: Then
+Processing <noun>
+Scanner called using word: rika
+Matched WORD1
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: rika
+Processing <afterSubject>
+Scanner called using word: toire
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: ni
+Matched DESTINATION
+TO: restroom
+Processing <verb>
+Scanner called using word: ikI
+Matched WORD2
+ACTION: go
+Processing <tense>
+Scanner called using word: mashita
+Matched VERBPAST
+TENSE: VERBPAST
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: rika
+Processing <s>
+Processing <noun>
+Matched WORD1
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: rika
+Processing <afterSubject>
+Scanner called using word: nakI
+Processing <verb>
+Matched WORD2
+ACTION: cry
+Processing <tense>
+Scanner called using word: mashita
+Matched VERBPAST
+TENSE: VERBPAST
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: eofm
+
+Successfully parsed <story>.
+
+
+-----------------Translated.tt
+
 ACTOR: I/me
 DESCRIPTION: rika
 TENSE: IS
