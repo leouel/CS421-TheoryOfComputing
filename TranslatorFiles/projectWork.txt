@@ -7,8 +7,8 @@ Must have divided the work as specified.
 If the member did not fully contribute to the assigned part,
 do not list his/her name!!!!!
 1.State who did what by indicating: 
-  Member A tasks (getEword) - who:
-  Member B tasks (gen) - who:
+  Member A tasks (getEword) - who: Marco Flores
+  Member B tasks (gen) - who: Leouel Guanzon
   Member C tasks (dictionary) - who:
   Who updated which parser functions with getEword and gen calls?
    functions         who
