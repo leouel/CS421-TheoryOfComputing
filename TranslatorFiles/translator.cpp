@@ -15,6 +15,7 @@ using namespace std;
 
 
 ofstream fout;
+ofstream ferr;
 string saved_lexeme;
 tokentype saved_token;
 bool token_available = false;
@@ -63,11 +64,6 @@ unordered_map<string, string> lexicon_map;
 //                 in Lexicon if it is there -- save the result   
 //                 in saved_E_word
 //  Done by: Marco Flores 
-
-//    gen(line_type) - using the line type,
-//                     sends a line of an IR to translated.txt
-//                     (saved_E_word or saved_token is used)
-//  Done by: ** 
 bool getEword(){
   std::unordered_map<std::string,string>::const_iterator it = lexicon_map.find(saved_lexeme);
   if ( it == lexicon_map.end()) {
@@ -80,7 +76,9 @@ bool getEword(){
   return 1;
 }
 
-
+//    gen(line_type) - using the line type,
+//                     sends a line of an IR to translated.txt
+//                     (saved_E_word or saved_token is used)
 //Done by: Leouel Guanzon
 void gen(string line_type){
   //use fout, the file is already open
@@ -110,6 +108,7 @@ void gen(string line_type){
 void syntaxerror1(tokentype tt, string saved_lexeme)
 {
 	cout << "\nSYNTAX ERROR: expected " << token_Name[tt] << " but found " << saved_lexeme << endl;
+	ferr << "\nSYNTAX ERROR: expected " << token_Name[tt] << " but found " << saved_lexeme << endl;
 	exit(EXIT_FAILURE);
 }
 
@@ -118,6 +117,7 @@ void syntaxerror1(tokentype tt, string saved_lexeme)
 void syntaxerror2(string pFunction, string saved_lexeme) 
 {
 	cout << "\nSYNTAX ERROR: unexpected " << saved_lexeme << " found in " << pFunction << endl;
+	ferr << "\nSYNTAX ERROR: expected " << token_Name[tt] << " but found " << saved_lexeme << endl;
 	exit(EXIT_FAILURE);
 }
 
@@ -137,6 +137,7 @@ tokentype next_token()
 			cout << endl;
 			cout << "Successfully parsed <story>." << endl;
 			fout.close();
+			ferr.close();
 			exit(EXIT_SUCCESS);
 		}
 
@@ -397,7 +398,7 @@ void s()
 // ---------------- Driver ---------------------------
 
 // The final test driver to start the translator
-// Done by:  Marco Flores
+// Done by:  John Foster
 int main(int argc, char* argv[])
 {
   // opens the lexicon.txt file and reads it into Lexicon
@@ -419,6 +420,14 @@ int main(int argc, char* argv[])
     cerr << "Can't open translated.txt";
     return 1;
   }
+  
+  // opens the output file translated.txt
+  ferr.open("errors.txt");
+  if (!ferr) {
+    cerr << "Can't open errors.txt";
+    return 1;
+  }
+  
 
   //** calls the <story> to start parsing
 
