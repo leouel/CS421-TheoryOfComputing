@@ -14,8 +14,8 @@ do not list his/her name!!!!!
    functions         who
    -------------  ---------
 	after_object	Leouel Guanzon
-	after_subject	John Foster
-	after_noun		Marco Flores
+	after_subject	Leouel Guanzon, John Foster
+	after_noun		Leouel Guanzon, Marco Flores
 	S 				Leouel Guanzon
 	
   
