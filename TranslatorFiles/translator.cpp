@@ -13,18 +13,6 @@ using namespace std;
    Complete all ** parts.
 */
 
-
-ofstream fout;
-ofstream ferr;
-string saved_lexeme;
-tokentype saved_token;
-bool token_available = false;
-bool disable_tracing = false;
-string token_Name[16] = {"ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
-
-
-string filename;
-
 /* INSTRUCTION:  Complete all ** parts.
    You may use any method to connect this file to scanner.cpp
    that you had written.  
@@ -33,17 +21,6 @@ string filename;
        and then append the two files into one: 
           cat scanner.cpp parser.cpp > myparser.cpp
 */
-
-//=================================================
-// File parser.cpp written by Group Number: 23
-//=================================================
-
-// ----- Four Utility Functions and Globals -----------------------------------
-string saved_E_word;
-
-// ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
-//    to display syntax error messages as specified by me.  
-
 
 //=================================================
 // File translator.cpp written by Group Number: 23
@@ -58,6 +35,19 @@ string saved_E_word;
 //ifstream fin;
 //ofstream fout;
 unordered_map<string, string> lexicon_map;
+
+ofstream fout;
+ofstream ferr;
+string saved_lexeme;
+tokentype saved_token;
+bool token_available = false;
+bool disable_tracing = false;
+string token_Name[16] = {"ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
+
+string filename;
+
+string saved_E_word;
+
 
 // ** Additions to parser.cpp here:
 //    getEword() - using the current saved_lexeme, look up the English word
