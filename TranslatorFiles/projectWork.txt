@@ -21,15 +21,14 @@ do not list his/her name!!!!!
   
 
 2. Who came to the meeting to put together the work?
+   Everyone came to meet and work on the project.
 
 3. You have included all the required comments?
    (updated the grammar rules in comments?)
-   
    Yes
 
 4. The project produced correct output for all 6
    test cases?
-   
    Yes
 
 5. If you did EC error recovery,

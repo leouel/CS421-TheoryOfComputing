@@ -240,7 +240,11 @@ void noun()
 	}
 }
 
-// Grammar: <after_object> ::= <verb> <tense> PERIOD | <noun> DESTINATION <verb> <tense> PERIOD
+// Grammar: <after_object> ::= <verb> #getEword# #gen(ACTION)# 
+// 							   <tense> #gen(TENSE)# PERIOD | 
+// 							   <noun> #getEword# DESTINATION #gen(TO)#
+// 							   <verb> #getEword# #gen(ACTION)#
+// 							   <tense> #gen(TENSE)# PERIOD
 // Done by: Leouel Guanzon, Marco Flores
 void after_object()
 {
@@ -287,7 +291,12 @@ void after_object()
 	}
 }
 
-// Grammar: <after_noun> ::= <be> PERIOD | DESTINATION <verb> <tense> PERIOD | OBJECT <after_object>
+// Grammar: <after_noun> ::= <be> #gen(DESCRIPTION)# #gen(TENSE)# PERIOD | 
+// 							 DESTINATION #gen(TO)#
+// 							 <verb> #getEword# #gen(ACTION)#
+// 							 <tense> #gen(TENSE)# PERIOD | 
+// 							 OBJECT #gen(OBJECT)#
+// 							 <after_object>
 // Done by: Leouel Guanzon, Marco Flores
 void after_noun()
 {
@@ -329,7 +338,10 @@ void after_noun()
 	}
 }
 
-// Grammar: <after_subject> ::= <verb> <tense> PERIOD | <noun> <aftern_noun>
+// Grammar: <after_subject> ::= <verb> #getEword# #gen(ACTION)#
+// 								<tense> #gen(TENSE)# PERIOD | 
+// 								<noun> #getEword#
+// 								<aftern_noun>
 // Done by: Leouel Guanzon, Marco Flores
 void after_subject()
 {
@@ -362,7 +374,9 @@ void after_subject()
 	}
 }
 
-// Grammar: <s> ::= [CONNECTOR] <noun> SUBJECT <after_subject>
+// Grammar: <s> ::= [CONNECTOR #getEword# #gen(CONNECTOR)#]
+// 					<noun> #getEword# SUBJECT #gen(ACTOR)# 
+// 					<after_subject>
 // Done by: Leouel Guanzon, Marco Flores
 void s()
 {
@@ -433,10 +447,12 @@ int main(int argc, char* argv[])
   }
   // Grammar: <story> ::= <s> { <s> }
   s();
+  fout << endl;
   
   while(next_token() != EOFM)
   {
 	  s();
+	  fout << endl;
   }
 
   fin.close();
