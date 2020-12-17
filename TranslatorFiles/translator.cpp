@@ -4,7 +4,7 @@
 #include <unordered_map>
 #include <stdlib.h>
 #include <cstring>
-#include "scanner.cpp"
+#include "scanner.hpp"
 using namespace std;
 
 /* INSTRUCTION:  copy your parser.cpp here
@@ -117,7 +117,7 @@ void syntaxerror1(tokentype tt, string saved_lexeme)
 void syntaxerror2(string pFunction, string saved_lexeme) 
 {
 	cout << "\nSYNTAX ERROR: unexpected " << saved_lexeme << " found in " << pFunction << endl;
-	ferr << "\nSYNTAX ERROR: expected " << token_Name[tt] << " but found " << saved_lexeme << endl;
+	ferr << "\nSYNTAX ERROR: expected " << pFunction << " but found " << saved_lexeme << endl;
 	exit(EXIT_FAILURE);
 }
 
