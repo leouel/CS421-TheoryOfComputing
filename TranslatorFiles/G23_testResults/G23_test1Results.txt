@@ -1,0 +1,237 @@
+Script started on Thu 17 Dec 2020 06:55:28 AM PST
+]0;guanz004@empress:~/CS421/CS421Progs/TranslatorFiles[?1034h[guanz004@empress TranslatorFiles]$ ./group23project.out 
+Enter the input file name: partCtest1
+Processing <story>
+
+Processing <s>
+Scanner called using word: watashi
+Processing <noun>
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: I/me
+Processing <afterSubject>
+Scanner called using word: rika
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: desu
+Processing <be>
+Matched IS
+DESCRIPTION: rika
+TENSE: IS
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: watashi
+Processing <s>
+Processing <noun>
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: I/me
+Processing <afterSubject>
+Scanner called using word: sensei
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: desu
+Processing <be>
+Matched IS
+DESCRIPTION: teacher
+TENSE: IS
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: rika
+Processing <s>
+Processing <noun>
+Matched WORD1
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: rika
+Processing <afterSubject>
+Scanner called using word: gohan
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: o
+Matched OBJECT
+OBJECT: meal
+Processing <afterObject>
+Scanner called using word: tabE
+Processing <verb>
+Matched WORD2
+ACTION: eat
+Processing <tense>
+Scanner called using word: masu
+Matched VERB
+TENSE: VERB
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: watashi
+Processing <s>
+Processing <noun>
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: I/me
+Processing <afterSubject>
+Scanner called using word: tesuto
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: o
+Matched OBJECT
+OBJECT: test
+Processing <afterObject>
+Scanner called using word: seito
+Processing <noun>
+Matched WORD1
+Scanner called using word: ni
+Matched DESTINATION
+TO: student
+Processing <verb>
+Scanner called using word: agE
+Matched WORD2
+ACTION: give
+Processing <tense>
+Scanner called using word: mashita
+Matched VERBPAST
+TENSE: VERBPAST
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: shikashi
+Processing <s>
+Matched CONNECTOR
+CONNECTOR: However
+Processing <noun>
+Scanner called using word: seito
+Matched WORD1
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: student
+Processing <afterSubject>
+Scanner called using word: yorokobI
+Processing <verb>
+Matched WORD2
+ACTION: enjoy
+Processing <tense>
+Scanner called using word: masendeshita
+Matched VERBPASTNEG
+TENSE: VERBPASTNEG
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: dakara
+Processing <s>
+Matched CONNECTOR
+CONNECTOR: Therefore
+Processing <noun>
+Scanner called using word: watashi
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: I/me
+Processing <afterSubject>
+Scanner called using word: kanashii
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: deshita
+Processing <be>
+Matched WAS
+DESCRIPTION: sad
+TENSE: WAS
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: soshite
+Processing <s>
+Matched CONNECTOR
+CONNECTOR: Then
+Processing <noun>
+Scanner called using word: rika
+Matched WORD1
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: rika
+Processing <afterSubject>
+Scanner called using word: toire
+Processing <noun>
+Matched WORD1
+Processing <afterNoun>
+Scanner called using word: ni
+Matched DESTINATION
+TO: restroom
+Processing <verb>
+Scanner called using word: ikI
+Matched WORD2
+ACTION: go
+Processing <tense>
+Scanner called using word: mashita
+Matched VERBPAST
+TENSE: VERBPAST
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: rika
+Processing <s>
+Processing <noun>
+Matched WORD1
+Scanner called using word: wa
+Matched SUBJECT
+ACTOR: rika
+Processing <afterSubject>
+Scanner called using word: nakI
+Processing <verb>
+Matched WORD2
+ACTION: cry
+Processing <tense>
+Scanner called using word: mashita
+Matched VERBPAST
+TENSE: VERBPAST
+Scanner called using word: .
+Matched PERIOD
+Scanner called using word: eofm
+
+Successfully parsed <story>.
+]0;guanz004@empress:~/CS421/CS421Progs/TranslatorFiles[guanz004@empress TranslatorFiles]$ i[Kvi te[Kranslated.txt 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H[1;106r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[106;1H"translated.txt" 39L, 442C[>c[1;1H[33m  1 [mACTOR: I/me
+[33m  2 [mDESCRIPTION: rika
+[33m  3 [mTENSE: IS
+[33m  4 
+  5 [mACTOR: I/me
+[33m  6 [mDESCRIPTION: teacher
+[33m  7 [mTENSE: IS
+[33m  8 
+  9 [mACTOR: rika
+[33m 10 [mOBJECT: meal
+[33m 11 [mACTION: eat
+[33m 12 [mTENSE: VERB
+[33m 13 
+ 14 [mACTOR: I/me
+[33m 15 [mOBJECT: test
+[33m 16 [mTO: student
+[33m 17 [mACTION: give
+[33m 18 [mTENSE: VERBPAST
+[33m 19 
+ 20 [mCONNECTOR: However
+[33m 21 [mACTOR: student
+[33m 22 [mACTION: enjoy
+[33m 23 [mTENSE: VERBPASTNEG
+[33m 24 
+ 25 [mCONNECTOR: Therefore
+[33m 26 [mACTOR: I/me
+[33m 27 [mDESCRIPTION: sad
+[33m 28 [mTENSE: WAS
+[33m 29 
+ 30 [mCONNECTOR: Then
+[33m 31 [mACTOR: rika
+[33m 32 [mTO: restroom
+[33m 33 [mACTION: go
+[33m 34 [mTENSE: VERBPAST
+[33m 35 
+ 36 [mACTOR: rika
+[33m 37 [mACTION: cry
+[33m 38 [mTENSE: VERBPAST
+[33m 39 [m
+[34m~                                                                                                                                   [41;1H~                                                                                                                                   [42;1H~                                                                                                                                   [43;1H~                                                                                                                                   [44;1H~                                                                                                                                   [45;1H~                                                                                                                                   [46;1H~                                                                                                                                   [47;1H~                                                                                                                                   [48;1H~                                                                                                                                   [49;1H~                                                                                                                                   [50;1H~                                                                                                                                   [51;1H~                                                                                                                                   [52;1H~                                                                                                                                   [53;1H~                                                                                                                                   [54;1H~                                                                                                                                   [55;1H~                                                                                                                                   [56;1H~                                                                                                                                   [57;1H~                                                                                                                                   [58;1H~                                                                                                                                   [59;1H~                                                                                                                                   [60;1H~                                                                                                                                   [61;1H~                                                                                                                                   [62;1H~                                                                                                                                   [63;1H~                                                                                                                                   [64;1H~                                                                                                                                   [65;1H~                                                                                                                                   [66;1H~                                                                                                                                   [67;1H~                                                                                                                                   [68;1H~                                                                                                                                   [69;1H~                                                                                                                                   [70;1H~                                                                                                                                   [71;1H~                                                                                                                                   [72;1H~                                                                                                                                   [73;1H~                                                                                                                                   [74;1H~                                                                                                                                   [75;1H~                                                                                                                                   [76;1H~                                                                                                                                   [77;1H~                                                                                                                                   [78;1H~                                                                                                                                   [79;1H~                                                                                                                                   [80;1H~                                                                                                                                   [81;1H~                                                                                                                                   [82;1H~                                                                                                                                   [83;1H~                                                                                                                                   [84;1H~                                                                                                                                   [85;1H~                                                                                                                                   [86;1H~                                                                                                                                   [87;1H~                                                                                                                                   [88;1H~                                                                                                                                   [89;1H~                                                                                                                                   [90;1H~                                                                                                                                   [91;1H~                                                                                                                                   [92;1H~                                                                                                                                   [93;1H~                                                                                                                                   [94;1H~                                                                                                                                   [95;1H~                                                                                                                                   [96;1H~                                                                                                                                   [97;1H~                                                                                                                                   [98;1H~                                                                                                                                   [99;1H~                                                                                                                                   [100;1H~                                                                                                                                   [101;1H~                                                                                                                                   [102;1H~                                                                                                                                   [103;1H~                                                                                                                                   [104;1H~                                                                                                                                   [105;1H~                                                                                                                                   [m[106;115H1,1[11CAll[1;5H[?12l[?25h[?25l[106;1H[K[106;1H:[?12l[?25hq[?25l[?12l[?25h[?25l[106;1H[K[106;1H[?1l>[?12l[?25h[?1049l]0;guanz004@empress:~/CS421/CS421Progs/TranslatorFiles[guanz004@empress TranslatorFiles]$ vi translated.txt [3@./group23project.ou[C[C[3Pvi translated.tx[C[C[Kexit[Kt
+exit
+
+Script done on Thu 17 Dec 2020 06:56:03 AM PST
