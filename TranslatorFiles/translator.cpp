@@ -7,6 +7,17 @@
 #include "scanner.hpp"
 using namespace std;
 
+ofstream fout;
+ofstream ferr;
+string saved_lexeme;
+tokentype saved_token;
+bool token_available = false;
+bool disable_tracing = false;
+string token_Name[16] = {"ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
+
+string filename;
+
+
 /* INSTRUCTION:  copy your parser.cpp here
       cp ../ParserFiles/parser.cpp .
    Then, insert or append its contents into this file and edit.
@@ -32,20 +43,7 @@ using namespace std;
 // Make sure it is easy and fast to look up the translation.
 // Do not change the format or content of lexicon.txt 
 //  Done by: Marco Flores
-//ifstream fin;
-//ofstream fout;
 unordered_map<string, string> lexicon_map;
-
-ofstream fout;
-ofstream ferr;
-string saved_lexeme;
-tokentype saved_token;
-bool token_available = false;
-bool disable_tracing = false;
-string token_Name[16] = {"ERROR", "WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
-
-string filename;
-
 string saved_E_word;
 
 
