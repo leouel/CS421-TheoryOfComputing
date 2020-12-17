@@ -117,7 +117,7 @@ void syntaxerror1(tokentype tt, string saved_lexeme)
 void syntaxerror2(string pFunction, string saved_lexeme) 
 {
 	cout << "\nSYNTAX ERROR: unexpected " << saved_lexeme << " found in " << pFunction << endl;
-	ferr << "\nSYNTAX ERROR: expected " << pFunction << " but found " << saved_lexeme << endl;
+	ferr << "\nSYNTAX ERROR: expected " << saved_lexeme << " but found " << pFunction << endl;
 	exit(EXIT_FAILURE);
 }
 
